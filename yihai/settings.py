@@ -12,7 +12,7 @@ MANAGERS = ADMINS
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql', # Add 'postgresql_psycopg2', 'mysql', 'django.db.backends.', 'sqlite3' or 'oracle'.
-        'NAME': 'yihai_erp',                      # Or path to database file if using sqlite3.
+        'NAME': 'yihai',                      # Or path to database file if using sqlite3.
         'USER': 'root',                      # Not used with sqlite3.
         'PASSWORD': '484471271',                  # Not used with sqlite3.
         'HOST': 'localhost',                      # Set to empty string for localhost. Not used with sqlite3.
@@ -117,7 +117,7 @@ INSTALLED_APPS = (
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'sales',
-    'info',
+    'purchase',
     'rest_framework',
     # Uncomment the next line to enable the admin:
     'django.contrib.admin',
