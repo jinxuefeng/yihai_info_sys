@@ -20,6 +20,10 @@ urlpatterns = patterns('',
     #DO NOT use r'^admin/$'
     url(r'^$', home),
     url(r'^log_in/$', log_in),
+    url(r'^log_out/$', log_out),
+    url(r'^my_deck/$', my_deck),
+    url(r'^static/(?P<path>.*)','django.views.static.serve', 
+        {'document_root': '/home/jinxuefeng/yihai_info_sys/yihai/static'}),
     url(r'^admin/', include(admin.site.urls)),
-    url(r'^api_auth/', include('rest_framework.urls', namespace='rest_framework')),
+    #url(r'^api_auth/', include('rest_framework.urls', namespace='rest_framework')),
 )
