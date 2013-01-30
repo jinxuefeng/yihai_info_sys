@@ -30,15 +30,14 @@ def home(request):
 def log_in(request):
     ""
     
-    if(request.method == 'GET'):
-        
+    if(request.method == 'GET'):        
         return render_to_response('yihai/log_in.html', context_instance=RequestContext(request))       
     elif(request.method == 'POST'):
         user = authenticate(username=request.POST['user_name'], password=request.POST['password'])
         if user is not None:
             login(request, user)
             return HttpResponseRedirect("/my_deck/")      
-        return render_to_response('yihai/log_done.html', context_instance=RequestContext(request))
+        return render_to_response('yihai/log_in.html', {'hint_error':True})
 
 def log_out(request):
     logout(request)

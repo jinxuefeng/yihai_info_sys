@@ -1,18 +1,74 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
-<html>
 <head>
-<title>
-Log In
-</title>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<title>Log In</title>
+<style type="text/css">
+<!--
+#d1 {
+	position:absolute;
+	left:450px;
+	top:150px;
+	
+	height: 300px;
+	width: 300px;
+}
+#log_in_form {
+	height: auto;
+	width: 300px;	
+	background-color: #0000FF;
+	font-size: 18px;
+	font-weight: bold;
+	color: #ccc;
+	height: 150px;
+	width: 300px;
+	padding: 10px;
+
+	
+}
+
+.labels {
+	float: left;
+	width: 200px;
+	padding-left: 75px;	
+	padding-bottom: 10px;	
+}
+
+#ok_button {
+	float: left;
+	font-weight: bold;
+	height: 25px;
+	width: 50px;
+	margin-left: 125px;
+	margin-up: 5px;
+}
+p {
+	width: 200px;
+	color: #0000FF;
+	font-size: 12px;
+	float: left;
+	padding-left: 80px;
+}
+.STYLE1 {font-size: 14px}
+-->
+</style>
 </head>
+
 <body>
-    <form id="log_in" method="post" action="">{% csrf_token %}         
-        User Name:
-        <input type="text" name="user_name">
-        Password:
-        <input type="password" name="password">
-        <input type="submit" value="submit">
-    </form>
+<div id="d1">
+<form id="log_in_form" name="log_in_form" method="post" action="">
+  <label class="labels"> Name:
+  <input type="text" name="user_name" class="inputs"/>
+  </label>
+  <label class="labels">Password:
+  <input type="password" name="password"  class="inputs"/>
+  </label>
+   <input type="submit" name="Submit" value="GO" id="ok_button"/>   
+</form>
+{% if hint_error %}
+<p class="STYLE1">PLEASE TRY AGAIN! </p>
+{% endif %}
+</div>
+
 </body>
 </html>

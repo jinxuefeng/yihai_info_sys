@@ -4,7 +4,7 @@ from django.conf.urls import patterns, include, url
 from django.contrib import admin
 #auto find and run admin.py in each app
 admin.autodiscover()
-from sales import urls as sales_url
+#from sales import urls as sales_url
 from views import *
 
 #urlpatterns is a tuple with elements as: (regular expression, Python callback function [, optional dictionary])
@@ -22,8 +22,7 @@ urlpatterns = patterns('',
     url(r'^log_in/$', log_in),
     url(r'^log_out/$', log_out),
     url(r'^my_deck/$', my_deck),
-    url(r'^static/(?P<path>.*)','django.views.static.serve', 
-        {'document_root': '/home/jinxuefeng/yihai_info_sys/yihai/static'}),
+    url(r'^static/(?P<path>.*)','django.views.static.serve'),
     url(r'^admin/', include(admin.site.urls)),
     #url(r'^api_auth/', include('rest_framework.urls', namespace='rest_framework')),
 )
